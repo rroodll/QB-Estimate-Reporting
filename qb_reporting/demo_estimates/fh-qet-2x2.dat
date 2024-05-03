@@ -1,0 +1,15 @@
+{
+  "id": "FH 2x2 Square (U/J = 4.0)",
+  "name": "Fermi-Hubbard",
+  "category": "scientific",
+  "size": "2 x 2",
+  "task": "time_independent_dynamics",
+  "implementation": "QET w/ Linear-T FH Encoding",
+  "value": 50000000.0,
+  "repetitions": 1,
+  "logical-abstract": {
+    "num_qubits": 20,
+    "t_count": 84650,
+    "clifford_count": 193111
+  }
+}
