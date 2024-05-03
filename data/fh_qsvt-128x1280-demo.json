@@ -1,0 +1,42 @@
+{
+  "id": "MITLL FH Demo 1",
+  "name": "Fermi-Hubbard",
+  "category": "scientific",
+  "size": "128 x 128",
+  "task": "time_independent_dynamics",
+  "implementation": "QET w/ Linear-T FH Encoding",
+  "value": 50000000.0,
+  "repetitions": 1000,
+  "logical-abstract": {
+    "num_qubits": 32804,
+    "t_count": 60549453290,
+    "clifford_count": 310704519223,
+    "gate_count": 99999999,
+    "circuit_depth": 99999999,
+    "t_depth": 99999999
+  },
+  "logical-compiled": {
+    "logical_architecture_description": "Description",
+    "num_qubits": 99999999,
+    "t_count": 99999999,
+    "num_t_factories": 10,
+    "gate_count": 99999999,
+    "clifford_count": 99999999,
+    "circuit_depth": 99999999,
+    "t_depth": 99999999
+  },
+  "physical": {
+    "physical_architecture_description": "Description",
+    "code_name": "surface",
+    "code_distance": 8,
+    "runtime": 99999999,
+    "num_qubits": 99999999,
+    "t_count": 99999999,
+    "num_t_factories": 10,
+    "num_factory_qubits": 100,
+    "gate_count": 99999999,
+    "circuit_depth": 99999999,
+    "t_depth": 99999999,
+    "clifford_count": 99999999
+  }
+}
