@@ -23,16 +23,7 @@ Change directory to the location of setup.py, then perform the following command
 
         conda activate <Environment Name>
 
-- Install the package
-
-        pip install .
-
-- If you are working as a developer (for all platforms and shells):
-
-        on Windows use:
-        pip install -e .[dev]
-        on Mac use:
-        pip install -e ."[dev]"
+- This package is not currently pip installable.
 
 ---
 
