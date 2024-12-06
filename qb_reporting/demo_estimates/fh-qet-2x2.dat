@@ -6,6 +6,7 @@
   "task": "time_independent_dynamics",
   "implementation": "QET w/ Linear-T FH Encoding",
   "value": 50000000.0,
+  "value_ci": [50e5, 50e7], 
   "repetitions": 1,
   "logical-abstract": {
     "num_qubits": 20,

@@ -40,6 +40,11 @@ schema_resource_estimate = {
                                         "time_dependent_dynamics", "linear_system", "nonlinear_differential_equation"]},
     "implementation":        {"type" : "string"},
     "value":                 {"type" : "number"},
+    "value_ci":              {"type" : "array", 
+                              "items":  {
+                                  "type": "number"
+                                }
+                              },
     "repetitions":           {"type" : "number"},
     "logical-abstract":      {"type" : "object",
                               "additionalProperties" : {
