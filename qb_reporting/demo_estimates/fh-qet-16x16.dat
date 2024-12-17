@@ -7,8 +7,12 @@
   "implementation": "QET w/ Linear-T FH Encoding",
   "value": 50000000.0,
   "value_ci": [50e5, 50e7], 
-  "repetitions": 1,
-  "logical-abstract": {
+  "value_per_t_gate": 1.30e-5,
+  "circuit_repetitions_per_calculation": 100,
+  "calculation_repetitions": 10,
+  "total_circuit_repetitions": 1000,
+  "runtime_requirement": 115200,  
+    "logical-abstract": {
     "num_qubits": 536,
     "t_count": 19909982,
     "clifford_count": 87896587

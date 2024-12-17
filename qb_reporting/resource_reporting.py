@@ -45,7 +45,11 @@ schema_resource_estimate = {
                                   "type": "number"
                                 }
                               },
-    "repetitions":           {"type" : "number"},
+    "value_per_t_gate":                        {"type" : "number"},
+    "circuit_repetitions_per_calculation":     {"type" : "number"},
+    "calculation_repetitions":                 {"type" : "number"},
+    "total_circuit_repetitions":               {"Type" : "number"},
+    "runtime_requirement":                     {"Type" : "number"},
     "logical-abstract":      {"type" : "object",
                               "additionalProperties" : {
                                   "type": "object",
@@ -97,10 +101,11 @@ schema_resource_estimate = {
                                   }
                               } },   
     "required":              ["id", "name", "category", "size", "task", "implementation",
-                              "value", "repetitions", "logical-abstract"]
-}
+                              "value", "logical-abstract", "value_per_t_gate", 
+                              "circuit_repetitions_per_calculation", "calculation_repetitions",
+                              "total_circuit_repetitions", "runtime_requirement"]
 
-
+}   
 
 
 
