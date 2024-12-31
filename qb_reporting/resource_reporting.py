@@ -30,82 +30,85 @@ import pandas       as   pd
 #####                             #############################################
 
 
-schema_resource_estimate = {
-#    "info":                  {"type" : "object"},
-    "id":                    {"type" : "string"},
-    "name":                  {"type" : "string"},
-    "category":              {"enum" : ["scientific", "industrial"]},
-    "size":                  {"type" : "string"},
-    "task":                  {"enum" : ["ground_state_energy_estimation", "time_independent_dynamics", 
-                                        "time_dependent_dynamics", "linear_system", "nonlinear_differential_equation"]},
-    "implementation":        {"type" : "string"},
-    "value":                 {"type" : "number"},
-    "value_ci":              {"type" : "array", 
-                              "items":  {
-                                  "type": "number"
-                                }
-                              },
-    "value_per_t_gate":                        {"type" : "number"},
-    "circuit_repetitions_per_calculation":     {"type" : "number"},
-    "calculation_repetitions":                 {"type" : "number"},
-    "total_circuit_repetitions":               {"Type" : "number"},
-    "runtime_requirement":                     {"Type" : "number"},
-    "logical-abstract":      {"type" : "object",
-                              "additionalProperties" : {
-                                  "type": "object",
-                                  "required" : ["num_qubits", "t_count"],
-                                  "properties": {
-                                      "num_qubits":     {"type" : "number"},
-                                      "t_count":        {"type" : "number"},
-                                      "circuit_depth":  {"type" : "number"},
-                                      "gate_count":     {"type" : "number"},
-                                      "t_depth":        {"type" : "number"},
-                                      "clifford_count": {"type" : "number"}
-                                  }
-                              } },
-    "logical-compiled":      {"type" : "object",
-                              "additionalProperties" : {
-                                  "type": "object",
-                                  "required" : ["logical_architecture_description", "num_qubits",
-                                                "t_count", "num_t_factories"],
-                                  "properties": {
-                                      "logical_architecture_description":     {"type" : "string"},
-                                      "num_qubits":                           {"type" : "number"},
-                                      "t_count":                              {"type" : "number"},
-                                      "num_t_factories":                      {"type" : "integer"},
-                                      "gate_count":                           {"type" : "number"},
-                                      "circuit_depth":                        {"type" : "number"},
-                                      "t_depth":                              {"type" : "number"},
-                                      "clifford_count":                       {"type" : "number"}
-                                  }
-                              } },   
-    "physical":              {"type" : "object",
-                              "additionalProperties" : {
-                                  "type": "object",
-                                  "required" : ["physical_architecture_description", "runtime",
-                                                "num_t_factories", "num_qubits", "t_count",
-                                                "code_name", "code_distance"],
-                                  "properties": {
-                                      "physical_architecture_description":    {"type" : "string"},
-                                      "code_name":                            {"enum" : ["surface", "other"]},
-                                      "code_distance":                        {"type" : "integer"},
-                                      "runtime":                              {"type" : "number"},
-                                      "num_qubits":                           {"type" : "number"},
-                                      "t_count":                              {"type" : "number"},
-                                      "num_t_factories":                      {"type" : "integer"},
-                                      "num_factory_qubits":                   {"type" : "integer"},
-                                      "gate_count":                           {"type" : "number"},
-                                      "circuit_depth":                        {"type" : "number"},
-                                      "t_depth":                              {"type" : "number"},
-                                      "clifford_count":                       {"type" : "number"}
-                                  }
-                              } },   
-    "required":              ["id", "name", "category", "size", "task", "implementation",
-                              "value", "logical-abstract", "value_per_t_gate", 
-                              "circuit_repetitions_per_calculation", "calculation_repetitions",
-                              "total_circuit_repetitions", "runtime_requirement"]
+# See ../schema/resource_estimate_schema.json.  
 
-}   
+
+# schema_resource_estimate = {
+# #    "info":                  {"type" : "object"},
+#     "id":                    {"type" : "string"},
+#     "name":                  {"type" : "string"},
+#     "category":              {"enum" : ["scientific", "industrial"]},
+#     "size":                  {"type" : "string"},
+#     "task":                  {"enum" : ["ground_state_energy_estimation", "time_independent_dynamics", 
+#                                         "time_dependent_dynamics", "linear_system", "nonlinear_differential_equation"]},
+#     "implementation":        {"type" : "string"},
+#     "value":                 {"type" : "number"},
+#     "value_ci":              {"type" : "array", 
+#                               "items":  {
+#                                   "type": "number"
+#                                 }
+#                               },
+#     "value_per_t_gate":                        {"type" : "number"},
+#     "circuit_repetitions_per_calculation":     {"type" : "number"},
+#     "calculation_repetitions":                 {"type" : "number"},
+#     "total_circuit_repetitions":               {"Type" : "number"},
+#     "runtime_requirement":                     {"Type" : "number"},
+#     "logical-abstract":      {"type" : "object",
+#                               "additionalProperties" : {
+#                                   "type": "object",
+#                                   "required" : ["num_qubits", "t_count"],
+#                                   "properties": {
+#                                       "num_qubits":     {"type" : "number"},
+#                                       "t_count":        {"type" : "number"},
+#                                       "circuit_depth":  {"type" : "number"},
+#                                       "gate_count":     {"type" : "number"},
+#                                       "t_depth":        {"type" : "number"},
+#                                       "clifford_count": {"type" : "number"}
+#                                   }
+#                               } },
+#     "logical-compiled":      {"type" : "object",
+#                               "additionalProperties" : {
+#                                   "type": "object",
+#                                   "required" : ["logical_architecture_description", "num_qubits",
+#                                                 "t_count", "num_t_factories"],
+#                                   "properties": {
+#                                       "logical_architecture_description":     {"type" : "string"},
+#                                       "num_qubits":                           {"type" : "number"},
+#                                       "t_count":                              {"type" : "number"},
+#                                       "num_t_factories":                      {"type" : "integer"},
+#                                       "gate_count":                           {"type" : "number"},
+#                                       "circuit_depth":                        {"type" : "number"},
+#                                       "t_depth":                              {"type" : "number"},
+#                                       "clifford_count":                       {"type" : "number"}
+#                                   }
+#                               } },   
+#     "physical":              {"type" : "object",
+#                               "additionalProperties" : {
+#                                   "type": "object",
+#                                   "required" : ["physical_architecture_description", "runtime",
+#                                                 "num_t_factories", "num_qubits", "t_count",
+#                                                 "code_name", "code_distance"],
+#                                   "properties": {
+#                                       "physical_architecture_description":    {"type" : "string"},
+#                                       "code_name":                            {"enum" : ["surface", "other"]},
+#                                       "code_distance":                        {"type" : "integer"},
+#                                       "runtime":                              {"type" : "number"},
+#                                       "num_qubits":                           {"type" : "number"},
+#                                       "t_count":                              {"type" : "number"},
+#                                       "num_t_factories":                      {"type" : "integer"},
+#                                       "num_factory_qubits":                   {"type" : "integer"},
+#                                       "gate_count":                           {"type" : "number"},
+#                                       "circuit_depth":                        {"type" : "number"},
+#                                       "t_depth":                              {"type" : "number"},
+#                                       "clifford_count":                       {"type" : "number"}
+#                                   }
+#                               } },   
+#     "required":              ["id", "name", "category", "size", "task", "implementation",
+#                               "value", "logical-abstract", "value_per_t_gate", 
+#                               "circuit_repetitions_per_calculation", "calculation_repetitions",
+#                               "total_circuit_repetitions", "runtime_requirement"]
+
+# }   
 
 
 

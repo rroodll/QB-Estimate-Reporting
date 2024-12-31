@@ -1,20 +1,21 @@
 {
-  "id": "FH 16x16 Square (U/J = 4.0)",
+  "$schema": "https://raw.githubusercontent.com/jp7745/QB-Estimate-Reporting/feature/stand-alone-schema-file/schema/resource_estimate_schema.json",
+  "id": "FH 4x4 Square (U/J = 4.0)",
   "name": "Fermi-Hubbard",
   "category": "scientific",
-  "size": "16 x 16",
+  "size": "4 x 4",
   "task": "time_independent_dynamics",
   "implementation": "QET w/ Linear-T FH Encoding",
   "value": 50000000.0,
   "value_ci": [50e5, 50e7], 
-  "value_per_t_gate": 0.00251,
+  "value_per_t_gate": 1.44e-1,
   "circuit_repetitions_per_calculation": 100,
   "calculation_repetitions": 10,
   "total_circuit_repetitions": 1000,
   "runtime_requirement": 115200,  
     "logical-abstract": {
-    "num_qubits": 536,
-    "t_count": 19909982,
-    "clifford_count": 87896587
+    "num_qubits": 48,
+    "t_count": 346206,
+    "clifford_count": 940395
   }
 }
