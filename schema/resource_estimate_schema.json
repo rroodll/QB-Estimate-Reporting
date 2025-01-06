@@ -1,0 +1,272 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/jp7745/QB-Estimate-Reporting/feature/stand-alone-schema-file/schema/resource_estimate_schema.json",
+  "title": "Resource Estimate Schema",
+  "description": "Describes the required fields for a valid resource estimate file.",
+  "required": [
+    "id",
+    "name",
+    "category",
+    "size",
+    "task",
+    "implementation",
+    "value",
+    "logical-abstract",
+    "value_per_t_gate",
+    "circuit_repetitions_per_calculation",
+    "calculation_repetitions",
+    "total_circuit_repetitions",
+    "runtime_requirement"
+  ],
+  "properties": {
+    "id": {
+      "title": "ID",
+      "description": "A unique ID for the resource estimate file.",
+      "type": "string"
+    },
+    "name": {
+      "title": "Name",
+      "description": "A name for the application.",
+      "type": "string"
+    },
+    "category": {
+      "title": "Category",
+      "description": "The category of problem instance: `industrial` or `scientific`",
+      "enum": [
+        "scientific",
+        "industrial"
+      ]
+    },
+    "size": {
+      "title": "Problem size",
+      "description": "Description of the problem instance size in appropriate units.",
+      "type": "string"
+    },
+    "task": {
+      "title": "Task",
+      "description": "Computational task.",
+      "enum": [
+        "ground_state_energy_estimation",
+        "time_independent_dynamics",
+        "time_dependent_dynamics",
+        "linear_system",
+        "nonlinear_differential_equation"
+      ]
+    },
+    "implementation": {
+      "title": "Implementation",
+      "description": "Description of implementation, e.g. algorithm / encoding.",
+      "type": "string"
+    },
+    "value": {
+      "title": "Value",
+      "description": "The utility estimate in US dollars for the problem.",
+      "type": "number"
+    },
+    "value_ci": {
+      "title": "Value confidence interval",
+      "description": "[Optional] The lower and upper bounds on the utility estimate `value`.  Reported as `[lower, upper]`",
+      "type": "array",
+      "items": {
+        "type": "number"
+      }
+    },
+    "value_per_t_gate": {
+      "title": "Value per T-gate",
+      "description": "The utility estimate `value` divided by the number of T-gates including all repetitions required.",
+      "type": "number"
+    },
+    "circuit_repetitions_per_calculation": {
+      "title": "Circuit repetitions per calculation",
+      "description": "The number of times a circuit must be repeated to ensure successful execution.",
+      "type": "number"
+    },
+    "calculation_repetitions": {
+      "title": "Calculation repetitions",
+      "description": "The number of calculation repetitions required for utility.  E.g., parameter sweeps.",
+      "type": "number"
+    },
+    "total_circuit_repetitions": {
+      "title": "Total circuit repetitions",
+      "description": "Total number of circuit repetitions required to meet utility target.",
+      "Type": "number"
+    },
+    "runtime_requirement": {
+      "title": "Runtime requirement",
+      "description": "Maximum runtime in seconds for utility, assuming a single, unparallelized workflow.",
+      "Type": "number"
+    },
+    "logical-abstract": {
+      "title": "Logical/abstract Quantum Resource Estimate",
+      "description": "Accounting for logical quantum resources.",
+      "type": "object",
+      "required": [
+        "num_qubits",
+        "t_count"
+      ],
+      "properties": {
+        "num_qubits": {
+          "title": "Number of logical qubits",
+          "description": "Number of logical qubits.",
+          "type": "number"
+        },
+        "t_count": {
+          "title": "T-gate count",
+          "description": "Total T-gate count.",
+          "type": "number"
+        },
+        "circuit_depth": {
+          "title": "Circuit depth",
+          "description": "[Optional] Total circuit depth.",
+          "type": "number"
+        },
+        "gate_count": {
+          "title": "Gate count",
+          "description": "[Optional] Total gate count.",
+          "type": "number"
+        },
+        "t_depth": {
+          "title": "T-depth",
+          "description": "[Optional] Total T-depth.",
+          "type": "number"
+        },
+        "clifford_count": {
+          "title": "Clifford count",
+          "description": "[Optional] Total clifford count.",
+          "type": "number"
+        }
+      }
+    },
+    "logical-compiled": {
+      "title": "Logical compiled",
+      "description": "[Optional] Compiled logical estimates.",
+      "type": "object",
+      "required": [
+        "logical_architecture_description",
+        "num_qubits",
+        "t_count",
+        "num_t_factories"
+      ],
+      "properties": {
+        "logical_architecture_description": {
+          "title": "Logical architecture description",
+          "description": "Description of logical architecture.",
+          "type": "string"
+        },
+        "num_qubits": {
+          "title": "Number of logical qubits",
+          "description": "Number of logical qubits.",
+          "type": "number"
+        },
+        "t_count": {
+          "title": "T-gate count",
+          "description": "Total T-gate count.",
+          "type": "number"
+        },
+        "num_t_factories": {
+          "title": "Number of T-factories",
+          "description": "Number of T-factories.",
+          "type": "integer"
+        },
+        "circuit_depth": {
+          "title": "Circuit depth",
+          "description": "[Optional] Total circuit depth.",
+          "type": "number"
+        },
+        "gate_count": {
+          "title": "Gate count",
+          "description": "[Optional] Total gate count.",
+          "type": "number"
+        },
+        "t_depth": {
+          "title": "T-depth",
+          "description": "[Optional] Total T-depth.",
+          "type": "number"
+        },
+        "clifford_count": {
+          "title": "Clifford count",
+          "description": "[Optional] Total clifford count.",
+          "type": "number"
+        }
+      }
+    },
+    "physical": {
+      "title": "Physical resource estimates",
+      "description": "[Optional] Physical resource estimates.",
+      "type": "object",
+      "required": [
+        "physical_architecture_description",
+        "runtime",
+        "num_t_factories",
+        "num_qubits",
+        "t_count",
+        "code_name",
+        "code_distance"
+      ],
+      "properties": {
+        "physical_architecture_description": {
+          "title": "Physical architecture description",
+          "description": "Description of physical architecture.",
+          "type": "string"
+        },
+        "code_name": {
+          "title": "Code name",
+          "description": "Type of code: `surface` or `other`.",
+          "enum": [
+            "surface",
+            "other"
+          ]
+        },
+        "code_distance": {
+          "title": "Code distance",
+          "description": "Code distance.",
+          "type": "integer"
+        },
+        "runtime": {
+          "title": "Runtime",
+          "description": "Runtime in seconds.",
+          "type": "number"
+        },
+        "num_qubits": {
+          "title": "Number of logical qubits",
+          "description": "Number of logical qubits.",
+          "type": "number"
+        },
+        "t_count": {
+          "title": "T-gate count",
+          "description": "Total T-gate count.",
+          "type": "number"
+        },
+        "num_t_factories": {
+          "title": "Number of T-factories",
+          "description": "Number of T-factories.",
+          "type": "integer"
+        },
+        "num_factory_qubits": {
+          "description": "[Optional] Number physical qubits used for T-factories.",
+          "type": "integer"
+        },
+        "circuit_depth": {
+          "title": "Circuit depth",
+          "description": "[Optional] Total circuit depth.",
+          "type": "number"
+        },
+        "gate_count": {
+          "title": "Gate count",
+          "description": "[Optional] Total gate count.",
+          "type": "number"
+        },
+        "t_depth": {
+          "title": "T-depth",
+          "description": "[Optional] Total T-depth.",
+          "type": "number"
+        },
+        "clifford_count": {
+          "title": "Clifford count",
+          "description": "[Optional] Total clifford count.",
+          "type": "number"
+        }
+      }
+    }
+  }
+}
