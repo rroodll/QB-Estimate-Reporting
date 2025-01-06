@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://raw.githubusercontent.com/jp7745/QB-Estimate-Reporting/feature/stand-alone-schema-file/schema/resource_estimate_schema.json",
+  "$id": "https://raw.githubusercontent.com/rroodll/QB-Estimate-Reporting/main/schema/resource_estimate_schema.json",
   "title": "Resource Estimate Schema",
   "description": "Describes the required fields for a valid resource estimate file.",
   "required": [
