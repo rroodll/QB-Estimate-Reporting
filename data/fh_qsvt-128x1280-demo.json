@@ -1,5 +1,5 @@
 {
-  "$schema": "https://raw.githubusercontent.com/jp7745/QB-Estimate-Reporting/feature/stand-alone-schema-file/schema/resource_estimate_schema.json",
+  "$schema": "https://raw.githubusercontent.com/rroodll/QB-Estimate-Reporting/main/schema/resource_estimate_schema.json",
   "id": "MITLL FH Demo 1",
   "name": "Fermi-Hubbard",
   "category": "scientific",
