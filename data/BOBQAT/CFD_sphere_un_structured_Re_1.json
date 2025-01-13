@@ -8,8 +8,8 @@
     "implementation": "CL-LBM + Berry2017 + PsiQuantum_QLSA + DragMeasurable",
     "value": 0,
     "value_ci": [
-        1060000000.0,
-        7780000000.0
+        0,
+        0
     ],
     "repetitions": 1,
     "logical-abstract": {

@@ -6,10 +6,10 @@
     "size": 6.4e+17,
     "task": "Estimate drag force with 0.05 failure tolerance",
     "implementation": "CL-LBM + Berry2017 + PsiQuantum_QLSA + DragMeasurable",
-    "value": 0,
+    "value": 2279000000.0,
     "value_ci": [
-        1060000000.0,
-        7780000000.0
+        501000000.0,
+        6371000000.0
     ],
     "repetitions": 1,
     "logical-abstract": {
@@ -19,5 +19,5 @@
     "timestamp": "2025-01-10T10:44:31.390257",
     "uuid": null,
     "comments": "Verification instance: flow around a sphere at different Reynolds Numbers (Re).  Utility estimate: $0. Size is number of LBM grid points n.",
-    "value_per_t_gate": 0.0
+    "value_per_t_gate": 2.5103438551395903e-15
 }
