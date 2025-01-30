@@ -5,7 +5,7 @@
   "category": "scientific",
   "size": "6 x 6, time=0.01",
   "task": "time_independent_dynamics",
-  "implementation": "QAE using QSVT w/ PauliLCU FH Encoding",
+  "implementation": "QAE using QSVT w/ FermiHubbardSquare Encoding",
   "value": 0,
   "value_per_t_gate": 0,
   "circuit_repetitions_per_calculation": 104676,
@@ -13,26 +13,26 @@
   "total_circuit_repetitions": 10467600,
   "runtime_requirement": 8640000,
   "logical-abstract": {
-    "num_qubits": 96,
-    "t_count": 20,
-    "clifford_count": 13
+    "num_qubits": 126,
+    "t_count": 58528,
+    "clifford_count": 261154
   },
   "logical-compiled": {
     "logical_architecture_description": "Multiple module ladder",
-    "num_qubits": 316,
-    "t_count": 2012172,
-    "num_t_factories": 6,
-    "clifford_count": 715850,
-    "t_depth": 6368
+    "num_qubits": 242,
+    "t_count": 88972.0,
+    "num_t_factories": 8,
+    "clifford_count": 0,
+    "t_depth": 368
   },
   "physical": {
     "physical_architecture_description": "1M Qubit superconducting transmon lattice",
     "code_name": "surface",
-    "code_distance": 31,
-    "runtime": 616.0398073,
-    "num_qubits": 14471628,
-    "t_count": 2012172,
-    "num_t_factories": 6,
-    "num_factory_qubits": 803052
+    "code_distance": 28,
+    "runtime": 0.196552372,
+    "num_qubits": 2795424,
+    "t_count": 88972.0,
+    "num_t_factories": 8,
+    "num_factory_qubits": 587680
   }
 }
