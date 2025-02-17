@@ -1,9 +1,9 @@
 {
   "$schema": "https://raw.githubusercontent.com/rroodll/QB-Estimate-Reporting/main/schema/resource_estimate_schema.json",
-  "id": "Rigetti-USC-FH-N_5-t_0.1",
+  "id": "Rigetti-USC-FH-N_3-t_1.0",
   "name": "Fermi-Hubbard",
   "category": "scientific",
-  "size": "5 x 5, time=0.1",
+  "size": "3 x 3, time=1.0",
   "task": "time_independent_dynamics",
   "implementation": "QAE using QSVT w/ FermiHubbardSquare Encoding",
   "value": 0,
@@ -13,26 +13,26 @@
   "total_circuit_repetitions": 10467600,
   "runtime_requirement": 8640000,
   "logical-abstract": {
-    "num_qubits": 104,
-    "t_count": 78608,
-    "clifford_count": 327366
+    "num_qubits": 60,
+    "t_count": 85616,
+    "clifford_count": 323042
   },
   "logical-compiled": {
     "logical_architecture_description": "Multiple module ladder",
-    "num_qubits": 211,
-    "t_count": 125564.0,
-    "num_t_factories": 8,
+    "num_qubits": 128,
+    "t_count": 179356.0,
+    "num_t_factories": 4,
     "clifford_count": 0,
-    "t_depth": 596
+    "t_depth": 1402
   },
   "physical": {
     "physical_architecture_description": "1M Qubit superconducting transmon lattice",
     "code_name": "surface",
     "code_distance": 28,
-    "runtime": 0.09956986,
-    "num_qubits": 2757792,
-    "t_count": 125564.0,
-    "num_t_factories": 8,
-    "num_factory_qubits": 587680
+    "runtime": 0.050832325,
+    "num_qubits": 1363216,
+    "t_count": 179356.0,
+    "num_t_factories": 4,
+    "num_factory_qubits": 293840
   }
 }

@@ -1,0 +1,38 @@
+{
+  "$schema": "https://raw.githubusercontent.com/rroodll/QB-Estimate-Reporting/main/schema/resource_estimate_schema.json",
+  "id": "Rigetti-Cyclic-O3",
+  "name": "Cyclic Ozone",
+  "category": "industrial",
+  "size": "energy error:1e-3, c60 molecule",
+  "task": "ground_state_energy_estimation",
+  "implementation": "Quantum Phase Estimation, DoubleFactorization",
+  "value": 0,
+  "value_per_t_gate": 0,
+  "circuit_repetitions_per_calculation": 1,
+  "calculation_repetitions": 7,
+  "total_circuit_repetitions": 7,
+  "runtime_requirement": 999999,
+  "logical-abstract": {
+    "num_qubits": 557,
+    "t_count": 7464027408,
+    "clifford_count": 78232424024
+  },
+  "logical-compiled": {
+    "logical_architecture_description": "Multiple module ladder",
+    "num_qubits": 3748,
+    "t_count": 7770735888.0,
+    "num_t_factories": 42,
+    "clifford_count": 78232424024.0,
+    "t_depth": 2073302
+  },
+  "physical": {
+    "physical_architecture_description": "1M Qubit superconducting transmon lattice",
+    "code_name": "surface",
+    "code_distance": 29,
+    "runtime": 35.681572460000005,
+    "num_qubits": 32045996,
+    "t_count": 7770735888.0,
+    "num_t_factories": 42,
+    "num_factory_qubits": 3085320
+  }
+}
